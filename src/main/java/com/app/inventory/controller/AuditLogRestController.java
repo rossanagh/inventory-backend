@@ -12,7 +12,10 @@ import com.app.inventory.service.AuditLogService;
 
 @RestController
 @RequestMapping("/api/audit")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {
+		  "https://rossanagh.github.io",
+		  "https://rossanagh.github.io/inventory"
+		})
 public class AuditLogRestController {
 
   private final AuditLogService audit;

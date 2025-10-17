@@ -17,7 +17,10 @@ import com.app.inventory.service.InventarService;
 
 @RestController
 @RequestMapping("/api/inventar")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {
+		  "https://rossanagh.github.io",
+		  "https://rossanagh.github.io/inventory"
+		})
 public class InventarController {
 
 	 private final InventarService inventarService;

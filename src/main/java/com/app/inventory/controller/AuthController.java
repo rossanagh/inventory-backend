@@ -15,7 +15,10 @@ import com.app.inventory.repository.AdminRepository;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:4200") // permite requesturi din Angular
+@CrossOrigin(origins = {
+		  "https://rossanagh.github.io",
+		  "https://rossanagh.github.io/inventory"
+		})// permite requesturi din Angular
 public class AuthController {
 
     @Autowired

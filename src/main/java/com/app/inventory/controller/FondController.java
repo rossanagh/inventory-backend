@@ -8,7 +8,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/fonduri")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {
+		  "https://rossanagh.github.io",
+		  "https://rossanagh.github.io/inventory"
+		})
 public class FondController {
 
     private final FondService fondService;

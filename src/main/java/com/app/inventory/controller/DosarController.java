@@ -13,7 +13,10 @@ import com.app.inventory.service.DosarService;
 
 @RestController
 @RequestMapping("/api/dosare")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {
+		  "https://rossanagh.github.io",
+		  "https://rossanagh.github.io/inventory"
+		})
 public class DosarController {
 
     private final DosarService dosarService;

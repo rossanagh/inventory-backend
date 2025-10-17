@@ -1,12 +1,20 @@
+# ---- build stage ----
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 RUN mvn -DskipTests package
 
+# ---- runtime stage ----
 FROM eclipse-temurin:21-jre
 WORKDIR /app
-ENV PORT=8081
-EXPOSE 8081
+
+# portul folosit de Render (Render setează variabila PORT)
+ENV PORT=8080
+EXPOSE 8080
+
+# copiem jar-ul
 COPY --from=build /app/target/*.jar app.jar
-CMD ["sh","-c","java -jar app.jar"]
+
+# pornim aplicația Spring Boot
+CMD ["java", "-jar", "app.jar"]

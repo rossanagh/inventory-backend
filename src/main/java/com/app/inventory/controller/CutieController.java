@@ -16,7 +16,10 @@ import com.app.inventory.model.Cutie;
 
 @RestController
 @RequestMapping("/api/cutii")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {
+		  "https://rossanagh.github.io",
+		  "https://rossanagh.github.io/inventory"
+		})
 public class CutieController {
 
     private final CutieService service;

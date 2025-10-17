@@ -13,7 +13,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tip-pastrare")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {
+		  "https://rossanagh.github.io",
+		  "https://rossanagh.github.io/inventory"
+		})
 public class TipPastrareController {
 
     private final TipPastrareService service;

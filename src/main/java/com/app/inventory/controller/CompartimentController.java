@@ -9,7 +9,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/compartimente")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {
+		  "https://rossanagh.github.io",
+		  "https://rossanagh.github.io/inventory"
+		})
 public class CompartimentController {
 
     private final CompartimentService compartimentService;
