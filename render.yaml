@@ -1,12 +1,10 @@
 services:
   - type: web
     name: inventory-backend
+    runtime: docker
     plan: free
-    env: node
     autoDeploy: true
-    buildCommand: ./mvnw -DskipTests package
-    startCommand: java -jar target/*.jar
-    healthCheckPath: /actuator/health
+    healthCheckPath: /actuator/health   # scoate dacă nu ai actuator
     envVars:
       - key: JAVA_TOOL_OPTIONS
         value: "-XX:MaxRAMPercentage=75.0"
