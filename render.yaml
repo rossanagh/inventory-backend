@@ -2,7 +2,7 @@ services:
   - type: web
     name: inventory-backend
     plan: free
-    env: docker
+    env: node
     autoDeploy: true
     buildCommand: ./mvnw -DskipTests package
     startCommand: java -jar target/*.jar
