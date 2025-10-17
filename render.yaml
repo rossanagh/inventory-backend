@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: inventory-backend
+    plan: free
+    env: docker
+    autoDeploy: true
+    buildCommand: ./mvnw -DskipTests package
+    startCommand: java -jar target/*.jar
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: JAVA_TOOL_OPTIONS
+        value: "-XX:MaxRAMPercentage=75.0"
